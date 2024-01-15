@@ -1,4 +1,4 @@
-# 3 Columns Preview Card Project
+# Result-summary
 ## Project Description
 
 This project showcases my fundamental skills in HTML, CSS, Bootstrap, and SASS. The project was organized into three folders.
