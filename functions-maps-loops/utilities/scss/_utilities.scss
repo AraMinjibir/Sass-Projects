@@ -1,0 +1,71 @@
+$utilities:(
+    "padding": (
+        "prefix" "p"
+        "values": (
+            "0": 0,
+            "1": $base-padding,
+            "2": $base-padding *2,
+            "3": $base-padding * 4,
+            "4": $base-padding * 6,
+        ),
+    ),
+    "padding-top":(
+        "prefix": "pt",
+        "values": (
+            "0": 0,
+            "1": $base-padding,
+            "2": $base-padding *2,
+            "3": $base-padding * 4,
+            "4": $base-padding * 6,
+        ),
+    ),
+    "padding-bottom":(
+        "prefix": "pb",
+        "values":(
+            "0": 0,
+            "1": $base-padding,
+            "2": $base-padding *2,
+            "3": $base-padding * 4,
+            "4": $base-padding * 6,
+        ),
+    ),
+    "padding-right":(
+        "padding-right":(
+            "prefix": "pr",
+            "values":(
+                "0": 0,
+            "1": $base-padding,
+            "2": $base-padding *2,
+            "3": $base-padding * 4,
+            "4": $base-padding * 6,
+            )
+        ),
+    ),
+    "padding-left":(
+        "prefix": "pl",
+        "values":(
+            "0": 0,
+            "1": $base-padding,
+            "2": $base-padding *2,
+            "3": $base-padding * 4,
+            "4": $base-padding * 6,
+        ),
+    ),
+); 
+@each $property, $map in $utilities{
+    $prefix: map-get($map, "prefix" );
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values{
+        @if($k == "default"){
+            .#{$prefix}{
+                #{$property}: $v;
+            }
+        }
+        @else {
+            .#{$prefix}-#{$k}{
+                #{$property}: $v;
+            }
+        }
+    }
+}

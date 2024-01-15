@@ -1,0 +1,22 @@
+/* Error: Expected identifier.
+ *   ,--> scss\_utilities.scss
+ * 66|             .#{$prefix}-#{$k}{
+ *   |                           ^^ 
+ *   '
+ *   ,
+ * 1 | .-
+ *   |   = error in interpolated output
+ *   '
+ *   scss\_utilities.scss 66:27  @import
+ *   scss\style.scss 3:9         root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected identifier.\a   \250c \2500 \2500 > scss\\_utilities.scss\a 66\2502              .#{$prefix}-#{$k}{\d\a   \2502                            ^^ \a   \2575 \a   \2577 \a 1 \2502  .-\a   \2502    \2501  error in interpolated output\a   \2575 \a   scss\\_utilities.scss 66:27  @import\a   scss\\style.scss 3:9         root stylesheet";
+}

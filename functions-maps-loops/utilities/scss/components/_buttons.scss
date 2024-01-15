@@ -1,0 +1,20 @@
+
+@mixin btn($bg-color:#e2e2e2) {
+    border: none;
+    border-radius: $base-border-radius;
+    padding: $base-padding *2;
+    cursor: pointer;
+    font-size: $base-font-size;
+    
+
+}
+
+@each $key, $val in $colors {
+    .btn-#{$key}{
+            @include btn($val);
+            &:hover{
+                background-color: lighten($val, 2);
+            }
+    }
+    
+}
